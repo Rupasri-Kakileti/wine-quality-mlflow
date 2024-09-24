@@ -1,0 +1,26 @@
+{
+	"folders": [
+		{
+			"path": "../../../testapp"
+		},
+		{
+			"path": "../../../Angular--app"
+		},
+		{
+			"path": "../../../Angular/routing"
+		},
+		{
+			"path": "../../../Angular/Angular-Project"
+		},
+		{
+			"path": "../../../Angular/stepper"
+		},
+		{
+			"path": "../../../Angular/Mock_API"
+		},
+		{
+			"path": "../../../Angular/Rest_API"
+		}
+	],
+	"settings": {}
+}
