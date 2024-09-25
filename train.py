@@ -17,6 +17,10 @@ import mlflow
 import mlflow.sklearn
 from mlflow.models import infer_signature
 
+import dagshub
+dagshub.init(repo_owner='Rupasri-Kakileti', repo_name='mlflowexperiments', mlflow=True)
+mlflow.set_tracking_uri("https://dagshub.com/Rupasri-Kakileti/mlflowexperiments.mlflow")
+
 logging.basicConfig(level=logging.WARN)
 logger = logging.getLogger(__name__)
 
