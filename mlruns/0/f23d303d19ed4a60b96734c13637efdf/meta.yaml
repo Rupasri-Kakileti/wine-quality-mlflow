@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/f23d303d19ed4a60b96734c13637efdf/artifacts
+end_time: 1730886245267
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f23d303d19ed4a60b96734c13637efdf
+run_name: wise-shrew-728
+run_uuid: f23d303d19ed4a60b96734c13637efdf
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1730886245062
+status: 3
+tags: []
+user_id: rupasri.kakileti
