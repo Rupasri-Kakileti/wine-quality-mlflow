@@ -10,6 +10,9 @@ from sklearn.linear_model import ElasticNet
 import mlflow
 import mlflow.sklearn
 
+# Define project name
+project_name = "Wine-Quality-Prediction"
+
 def eval_metrics(actual, pred):
     rmse = np.sqrt(mean_squared_error(actual, pred))
     mae = mean_absolute_error(actual, pred)
@@ -47,10 +50,10 @@ if __name__ == "__main__":
         predicted_qualities = lr.predict(test_x)
         (rmse, mae, r2) = eval_metrics(test_y, predicted_qualities)
 
-        print("Elasticnet model (alpha=%f, l1_ratio=%f):" % (alpha, l1_ratio))
-        print("  RMSE: %s" % rmse)
-        print("  MAE: %s" % mae)
-        print("  R2: %s" % r2)
+        print(f"{project_name} model (alpha={alpha}, l1_ratio={l1_ratio}):")
+        print(f"  RMSE: {rmse}")
+        print(f"  MAE: {mae}")
+        print(f"  R2: {r2}")
 
         # Log parameters and metrics to MLflow
         mlflow.log_param("alpha", alpha)
@@ -60,7 +63,7 @@ if __name__ == "__main__":
         mlflow.log_metric("mae", mae)
 
         # Register the model in MLflow model registry with versioning
-        model_name = "ElasticNetWineModel"
+        model_name = f"{project_name}ElasticNetModel"
         model_uri = f"runs:/{run.info.run_id}/model"
         registered_model = mlflow.register_model(model_uri, model_name)
 
@@ -78,7 +81,7 @@ if __name__ == "__main__":
         subprocess.run(["git", "add", "."], check=True)
 
         # Commit changes
-        commit_message = f"Logged metrics to MLflow, updated code, version {version_tag}"
+        commit_message = f"Logged metrics to MLflow, updated code, version {version_tag} for {project_name}"
         subprocess.run(["git", "commit", "-m", commit_message], check=True)
 
         # Tag the commit
